@@ -1,4 +1,3 @@
-import { Navbar } from "@/components/layout/navbar";
 import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
 import { Services } from "@/components/sections/services";
@@ -13,7 +12,6 @@ export default function Home() {
   return (
     <main className="relative min-h-screen">
       <Scene />
-      <Navbar />
       
       <div className="relative z-10">
         <Hero />
@@ -24,12 +22,6 @@ export default function Home() {
         <Team />
         <Testimonials />
         <Contact />
-        
-        <footer className="py-12 text-center text-foreground/40 border-t border-glass-border">
-          <div className="container mx-auto px-6">
-            <p>© 2026 Lumina Studio. Built with passion for excellence.</p>
-          </div>
-        </footer>
       </div>
     </main>
   );

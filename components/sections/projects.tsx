@@ -5,51 +5,8 @@ import { motion } from "framer-motion";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Github } from "lucide-react";
 import Image from "next/image";
-
-const projects = [
-  {
-    title: "AI Resume Analyzer",
-    category: "AI / Python",
-    description: "An advanced tool to parse and analyze resumes using machine learning for better talent matching.",
-    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=1170&auto=format&fit=crop",
-    link: "https://github.com/MBN4/ai-resume-analyzer",
-  },
-  {
-    title: "Uber Clone",
-    category: "Mobile / Fullstack",
-    description: "A comprehensive ride-sharing application clone with real-time tracking and payment integration.",
-    image: "https://images.unsplash.com/photo-1554672408-730436b60dde?q=80&w=1032&auto=format&fit=crop",
-    link: "https://github.com/MBN4/uber",
-  },
-  {
-    title: "Greenwave Music",
-    category: "Web / UI",
-    description: "A sleek, animation-rich music streaming platform with a focus on premium user experience.",
-    image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1170&auto=format&fit=crop",
-    link: "https://github.com/MBN4/greenwave-music",
-  },
-  {
-    title: "Health Portal",
-    category: "Healthcare",
-    description: "A centralized platform for patient record management and appointment scheduling.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1170&auto=format&fit=crop",
-    link: "https://github.com/MBN4/health-portal",
-  },
-  {
-    title: "AI Business Analyst",
-    category: "Data Science",
-    description: "Automated business insights generator using LLMs to analyze financial reports and trends.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1115&auto=format&fit=crop",
-    link: "https://github.com/MBN4/Ai-Business-Analyst",
-  },
-  {
-    title: "Cost Calculator",
-    category: "Fintech",
-    description: "Dynamic budget planning and project cost estimation tool with interactive data viz.",
-    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1170&auto=format&fit=crop",
-    link: "https://github.com/MBN4/cost-calculator-project",
-  },
-];
+import Link from "next/link";
+import { projects } from "@/lib/projects";
 
 export const Projects = () => {
   return (
@@ -82,14 +39,14 @@ export const Projects = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
-              key={project.title}
+              key={project.id}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
               <GlassCard className="group p-0 overflow-hidden border-0 h-full flex flex-col">
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-64 overflow-hidden w-full">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -103,11 +60,11 @@ export const Projects = () => {
                     </span>
                   </div>
                 </div>
-                <div className="p-6 flex-grow flex flex-col">
-                  <h3 className="text-2xl font-bold mb-2 group-hover:text-neon-green transition-colors">
+                <div className="p-6 flex-grow flex flex-col w-full text-left">
+                  <h3 className="text-2xl font-bold mb-2 group-hover:text-neon-green transition-colors text-left uppercase tracking-tight">
                     {project.title}
                   </h3>
-                  <p className="text-foreground/60 mb-6 text-sm line-clamp-2">
+                  <p className="text-foreground/60 mb-6 text-sm line-clamp-2 text-left">
                     {project.description}
                   </p>
                   <div className="mt-auto flex items-center gap-4">
@@ -119,9 +76,12 @@ export const Projects = () => {
                     >
                       <Github className="w-5 h-5" />
                     </a>
-                    <button className="text-xs font-bold uppercase tracking-widest text-foreground/40 hover:text-neon-green transition-colors">
+                    <Link 
+                      href={`/projects/${project.id}`}
+                      className="text-xs font-bold uppercase tracking-widest text-foreground/40 hover:text-neon-green transition-colors"
+                    >
                       Case Study
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </GlassCard>

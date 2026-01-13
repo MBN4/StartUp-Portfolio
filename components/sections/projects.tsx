@@ -3,7 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { GlassCard } from "@/components/ui/glass-card";
-import { Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/lib/projects";
@@ -22,18 +21,7 @@ export const Projects = () => {
             >
               Elite <span className="text-neon-green">Showcase</span>
             </motion.h2>
-            <p className="text-foreground/60 max-w-md">
-              A collection of high-impact repos from the GitHub portfolio of <span className="text-neon-green font-semibold">MBN4</span>.
-            </p>
           </div>
-          <a
-            href="https://github.com/MBN4"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-2 border border-neon-green/30 rounded-full text-sm font-semibold hover:bg-neon-green/5 transition-colors"
-          >
-            View All GitHub Repos
-          </a>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -68,17 +56,9 @@ export const Projects = () => {
                     {project.description}
                   </p>
                   <div className="mt-auto flex items-center gap-4">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-full glass hover:text-neon-green transition-colors"
-                    >
-                      <Github className="w-5 h-5" />
-                    </a>
                     <Link 
                       href={`/projects/${project.id}`}
-                      className="text-xs font-bold uppercase tracking-widest text-foreground/40 hover:text-neon-green transition-colors"
+                      className="px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#f8fafc] border border-white/10 rounded-full hover:bg-neon-green hover:text-[#020617] hover:border-neon-green transition-all duration-300"
                     >
                       Case Study
                     </Link>

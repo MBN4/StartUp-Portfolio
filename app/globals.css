@@ -58,20 +58,13 @@
 }
 
 :root {
-  --background: #f8fafc;
-  --foreground: #020617;
-  --neon-green: 16 185 129;
-  --glass-bg: rgba(255, 255, 255, 0.4);
-  --glass-border: rgba(16, 185, 129, 0.2);
-}
-
-.dark {
   --background: #020617;
   --foreground: #f8fafc;
   --neon-green: 16 185 129;
   --glass-bg: rgba(15, 23, 42, 0.5);
   --glass-border: rgba(16, 185, 129, 0.1);
 }
+
 
 body {
   background: var(--background);

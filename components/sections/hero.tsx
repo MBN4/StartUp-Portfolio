@@ -27,11 +27,11 @@ export const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#contact" className="group relative px-8 py-4 bg-neon-green text-background font-bold rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95">
-              <span className="relative z-10 flex items-center gap-2">
+            <a href="#contact" className="group relative px-8 py-4 bg-neon-green text-white font-bold rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95">
+              <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover:text-[#020617]">
                 Start a Project <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </a>
             <a href="#projects" className="px-8 py-4 glass rounded-full font-semibold transition-all hover:bg-white/5 active:scale-95">
               View Showcase
@@ -40,8 +40,6 @@ export const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Decorative background flare */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-neon-green/5 blur-[120px] rounded-full -z-10" />
     </section>
   );
 };

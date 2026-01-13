@@ -21,7 +21,7 @@ export const projects: Project[] = [
     overview: "Built using Python and OpenAI's GPT-4, this project focuses on precision and scale. It supports multiple file formats including PDF and DOCX, making it a versatile tool for modern HR departments.",
     techStack: ["Next.js", "Python", "FastAPI", "OpenAI API", "Tailwind CSS"],
     image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=1170&auto=format&fit=crop",
-    link: "https://github.com/MBN4/ai-resume-analyzer",
+    link: "#",
     codeSnippet: `import openai
 import PyPDF2
 
@@ -49,7 +49,7 @@ def analyze_resume(file_path):
     overview: "The architecture is split into a robust React Native frontend and a scalable Node.js backend. Real-time communication is powered by Socket.io, ensuring that ride requests and updates are delivered instantly.",
     techStack: ["React Native", "Node.js", "Express", "MongoDB", "Socket.io", "Stripe"],
     image: "https://images.unsplash.com/photo-1554672408-730436b60dde?q=80&w=1032&auto=format&fit=crop",
-    link: "https://github.com/MBN4/uber",
+    link: "#",
     codeSnippet: `// Socket.io Real-time tracking
 io.on('connection', (socket) => {
   socket.on('update-location', (data) => {
@@ -71,7 +71,7 @@ io.on('connection', (socket) => {
     overview: "The goal was to create an interface that felt alive. We used Framer Motion for complex orchestrations and GSAP for high-performance scroll animations, resulting in a buttery smooth experience.",
     techStack: ["Next.js", "Framer Motion", "GSAP", "Web Audio API", "Tailwind CSS"],
     image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1170&auto=format&fit=crop",
-    link: "https://github.com/MBN4/greenwave-music",
+    link: "#",
     codeSnippet: `// Framer Motion Animation Logic
 const cardVariants = {
   initial: { scale: 0.9, opacity: 0 },
@@ -103,7 +103,7 @@ export const MusicCard = () => (
     overview: "Security was the top priority. We implemented end-to-end encryption for all patient data and used RBAC (Role-Based Access Control) to ensure sensitive information is only accessible by authorized personnel.",
     techStack: ["React", "TypeScript", "Prisma", "PostgreSQL", "Auth.js", "AWS S3"],
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1170&auto=format&fit=crop",
-    link: "https://github.com/MBN4/health-portal",
+    link: "#",
     codeSnippet: `// Secure Patient Data Retrieval
 export const getPatientData = async (userId: string) => {
   const session = await getServerSession(authOptions);
@@ -127,7 +127,7 @@ export const getPatientData = async (userId: string) => {
     overview: "We utilized LangChain to create a specialized agent that understands financial terminology. The frontend features interactive charts that visualize the AI's findings in real-time.",
     techStack: ["React", "LangChain", "Python", "Pandas", "Recharts"],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1115&auto=format&fit=crop",
-    link: "https://github.com/MBN4/Ai-Business-Analyst",
+    link: "#",
     codeSnippet: `// LangChain Analysis Agent
 const agent = await initializeAgentExecutorWithOptions(
   tools,
@@ -151,7 +151,7 @@ const result = await agent.call({
     overview: "The calculator uses a custom-built mathematical engine to handle complex formulas and dependencies. The UI is built using a tabular system that feels familiar yet modern.",
     techStack: ["Next.js", "Zustand", "Chart.js", "Tailwind CSS"],
     image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1170&auto=format&fit=crop",
-    link: "https://github.com/MBN4/cost-calculator-project",
+    link: "#",
     codeSnippet: `// Dynamic Calculation Engine
 const useCalculator = create((set) => ({
   costs: [],

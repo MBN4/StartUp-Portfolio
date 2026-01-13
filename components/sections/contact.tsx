@@ -88,7 +88,7 @@ export const Contact = () => {
                       "w-full py-4 rounded-xl flex items-center justify-center gap-2 font-bold transition-all active:scale-[0.98]",
                       submitted 
                         ? "bg-emerald-500 text-white" 
-                        : "bg-neon-green text-background hover:opacity-90"
+                        : "bg-neon-green text-[#020617] hover:opacity-90"
                     )}
                   >
                     {submitted ? (

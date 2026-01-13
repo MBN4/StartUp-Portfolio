@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { projects } from "@/lib/projects";
 import { GlassCard } from "@/components/ui/glass-card";
-import { ArrowLeft, Github, Rocket, Code2, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, Rocket, Code2, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -149,21 +149,12 @@ export default function ProjectPage() {
         <div className="flex justify-center flex-col items-center gap-8">
           <Link 
             href="/#contact" 
-            className="group relative px-12 py-5 bg-neon-green text-background font-black rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 text-lg uppercase tracking-widest shadow-[0_0_50px_-10px_rgba(16,185,129,0.5)]"
+            className="group relative px-12 py-5 bg-neon-green text-white font-black rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 text-lg uppercase tracking-widest shadow-[0_0_50px_-10px_rgba(16,185,129,0.5)]"
           >
-            <span className="relative z-10">Contact Now</span>
+            <span className="relative z-10 transition-colors duration-300 group-hover:text-[#020617]">Contact Now</span>
             <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
           </Link>
           
-          <a 
-            href={project.link} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-foreground/40 hover:text-foreground transition-colors"
-          >
-            <Github className="w-5 h-5" />
-            <span className="text-sm font-bold uppercase tracking-widest">View Source on GitHub</span>
-          </a>
         </div>
       </div>
     </main>

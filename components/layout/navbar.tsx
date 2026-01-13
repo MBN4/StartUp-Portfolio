@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/ui-theme-toggle";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
@@ -88,10 +87,6 @@ export const Navbar = () => {
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
-          
-          <div className="w-px h-6 bg-glass-border mx-2" />
-          
-          <ThemeToggle />
         </motion.div>
       </nav>
 

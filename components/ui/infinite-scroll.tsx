@@ -29,10 +29,11 @@ export const InfiniteScroll = ({
       <div
         className={cn(
           "flex w-max",
-          scrolling ? (direction === "left" ? "animate-scroll-left" : "animate-scroll-right") : "pause"
+          direction === "left" ? "animate-scroll-left" : "animate-scroll-right"
         )}
         style={{
           animationDuration: `${speed}s`,
+          animationPlayState: scrolling ? "running" : "paused",
         } as React.CSSProperties}
       >
         <div className="flex gap-8 px-4">

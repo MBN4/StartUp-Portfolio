@@ -10,7 +10,7 @@ interface GlassCardProps {
   tilt?: boolean;
 }
 
-export const GlassCard = ({ children, className, tilt = true }: GlassCardProps) => {
+export const GlassCard = ({ children, className, tilt = false }: GlassCardProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const x = useMotionValue(0);
@@ -48,23 +48,28 @@ export const GlassCard = ({ children, className, tilt = true }: GlassCardProps) 
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      whileHover={{ 
+        y: -8,
+        scale: 1.02,
+        transition: { duration: 0.3, ease: "easeOut" }
+      }}
       style={{
         rotateX: tilt ? rotateX : 0,
         rotateY: tilt ? rotateY : 0,
         transformStyle: "preserve-3d",
       }}
       className={cn(
-        "glass-premium rounded-2xl p-6 relative overflow-hidden transition-shadow duration-500",
-        "hover:shadow-[0_0_30px_rgba(16,185,129,0.2)]",
+        "glass-premium rounded-2xl p-6 relative overflow-hidden transition-all duration-500",
+        "hover:shadow-[0_20px_40px_rgba(16,185,129,0.15)] hover:border-neon-green/30",
         className
       )}
     >
-      <div style={{ transform: "translateZ(50px)" }} className="relative z-10 flex flex-col items-center">
+      <div style={{ transform: "translateZ(30px)" }} className="relative z-10 flex flex-col items-center">
         {children}
       </div>
       
       {/* Decorative Glow */}
-      <div className="absolute -inset-2 bg-gradient-to-br from-neon-green/10 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+      <div className="absolute -inset-2 bg-gradient-to-br from-neon-green/20 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
     </motion.div>
   );
 };

@@ -9,10 +9,29 @@ import { cn } from "@/lib/utils";
 export const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const { name, email, message } = formData;
+    const formattedMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+    
+    // WhatsApp Redirect
+    window.open(`https://wa.me/923174311618?text=${formattedMessage}`, "_blank");
+    
+    // Email Redirect
+    window.location.href = `mailto:bn73147@gmail.com?subject=Project Inquiry from ${name}&body=${message.replace(/\n/g, "%0D%0A")}%0D%0A%0D%0A---%0D%0AFrom: ${name} (${email})`;
+
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({ name: "", email: "", message: "" });
+    }, 3000);
   };
 
   return (
@@ -40,13 +59,13 @@ export const Contact = () => {
                     <div className="w-10 h-10 rounded-full glass flex items-center justify-center text-neon-green">
                       @
                     </div>
-                    hello@luminastudio.com
+                    bn73147@gmail.com
                   </div>
                   <div className="flex items-center gap-4 text-foreground/80">
                     <div className="w-10 h-10 rounded-full glass flex items-center justify-center text-neon-green">
                       →
                     </div>
-                    Cupertino, CA / Global
+                    Phone: +92 317 4311618
                   </div>
                 </div>
               </div>
@@ -58,6 +77,8 @@ export const Contact = () => {
                     <input
                       required
                       type="text"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-neon-green/50 transition-colors"
                       placeholder="Steve Jobs"
                     />
@@ -67,6 +88,8 @@ export const Contact = () => {
                     <input
                       required
                       type="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-neon-green/50 transition-colors"
                       placeholder="steve@apple.com"
                     />
@@ -76,6 +99,8 @@ export const Contact = () => {
                     <textarea
                       required
                       rows={4}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-neon-green/50 transition-colors resize-none"
                       placeholder="Tell us about your masterpiece..."
                     />
@@ -93,7 +118,7 @@ export const Contact = () => {
                   >
                     {submitted ? (
                       <>
-                        Sent successfully! <CheckCircle2 className="w-5 h-5" />
+                        Processing Redirects... <CheckCircle2 className="w-5 h-5" />
                       </>
                     ) : (
                       <>

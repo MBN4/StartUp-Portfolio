@@ -4,6 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
+import { heroData } from "@/lib/hero";
+
 export const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
@@ -14,27 +16,27 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium tracking-wider text-neon-green uppercase border border-neon-green/20 rounded-full bg-neon-green/5 backdrop-blur-sm">
-            Next-Gen Software Solutions
+            {heroData.badge}
           </span>
           <h1 className="text-5xl md:text-8xl font-bold mb-6 tracking-tight">
-            Crafting Digital <br />
+            {heroData.titleLine1} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-emerald-400">
-              Masterpieces
+              {heroData.titleHighlight}
             </span>
           </h1>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/60 mb-10 leading-relaxed">
-            We blend Apple-inspired aesthetics with cutting-edge engineering to build immersive digital experiences that scale.
+            {heroData.description}
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#contact" className="group relative px-8 py-4 bg-neon-green text-white font-bold rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95">
+            <a href={heroData.primaryCta.href} className="group relative px-8 py-4 bg-neon-green text-white font-bold rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95">
               <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover:text-[#020617]">
-                Start a Project <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                {heroData.primaryCta.text} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
               <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </a>
-            <a href="#projects" className="px-8 py-4 glass rounded-full font-semibold transition-all hover:bg-white/5 active:scale-95">
-              View Showcase
+            <a href={heroData.secondaryCta.href} className="px-8 py-4 glass rounded-full font-semibold transition-all hover:bg-white/5 active:scale-95">
+              {heroData.secondaryCta.text}
             </a>
           </div>
         </motion.div>

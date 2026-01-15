@@ -73,7 +73,7 @@ export const Contact = () => {
               <div>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground/70 ml-1">Name</label>
+                    {/* <label className="text-sm font-medium text-foreground/70 ml-1">Name</label> */}
                     <input
                       required
                       type="text"
@@ -84,7 +84,7 @@ export const Contact = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground/70 ml-1">Email</label>
+                    {/* <label className="text-sm font-medium text-foreground/70 ml-1">Email</label> */}
                     <input
                       required
                       type="email"
@@ -95,7 +95,7 @@ export const Contact = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground/70 ml-1">Message</label>
+                    {/* <label className="text-sm font-medium text-foreground/70 ml-1">Message</label> */}
                     <textarea
                       required
                       rows={4}

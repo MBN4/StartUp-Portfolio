@@ -42,7 +42,7 @@ def analyze_resume(file_path):
   },
   {
     id: "uber-clone",
-    title: "Uber Clone",
+    title: "UBER Clone",
     category: "Mobile / Fullstack",
     description: "A comprehensive ride-sharing application clone with real-time tracking and payment integration.",
     detailedDescription: "This Uber clone is a full-featured marketplace application. It handles user authentication, real-time location tracking using Google Maps API, and seamless payment processing via Stripe.",

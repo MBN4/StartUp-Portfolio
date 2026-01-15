@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -82,7 +82,7 @@ export const Projects = () => {
               onMouseEnter={() => setHoveredId(project.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
-              <GlassCard className="group p-0 overflow-hidden border-white/5 h-full flex flex-col bg-slate-950/20 backdrop-blur-xl">
+              <GlassCard className="group p-0 overflow-hidden border-white/5 h-full flex flex-col bg-slate-950/20 backdrop-blur-xl hover:border-neon-green/30 transition-colors duration-500">
                 <div className="relative h-64 overflow-hidden w-full">
                   {/* Glitch Layers */}
                   <AnimatePresence>
@@ -145,15 +145,22 @@ export const Projects = () => {
                     {project.description}
                   </p>
                   
-                  <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
+                  <div className="mt-auto pt-6 border-t border-white/5">
                     <Link 
                       href={`/projects/${project.id}`}
-                      className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-neon-green/70 hover:text-neon-green transition-colors"
+                      className="group/btn relative w-full inline-flex items-center justify-center gap-2 py-3 bg-neon-green text-[#020617] text-[10px] font-black uppercase tracking-widest rounded-lg overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]"
                     >
-                      <span>Initialize Access</span>
-                      <span className="text-xs">_</span>
+                      <span className="relative z-10">Initialize Access</span>
+                      <span className="relative z-10 text-xs translate-y-[1px]">_</span>
+                      
+                      {/* Infinite Horizontal Shimmer Effect */}
+                      <div className="absolute inset-0 z-0 pointer-events-none">
+                        <div className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full animate-[shimmer_3s_infinite_linear]" />
+                      </div>
+                      
+                      {/* Optional Scanning Line (only on hover) */}
+                      <div className="absolute inset-0 w-full h-[1px] bg-white opacity-0 group-hover/btn:opacity-20 group-hover/btn:animate-[scan_1.5s_linear_infinite]" />
                     </Link>
-                    <span className="text-[10px] text-white/10 font-mono">0x{project.id.slice(0, 4)}</span>
                   </div>
                 </div>
 

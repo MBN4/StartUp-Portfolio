@@ -106,26 +106,36 @@ export const Contact = () => {
                     />
                   </div>
                   
-                  <button
+                  <motion.button
                     type="submit"
                     disabled={submitted}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     className={cn(
-                      "w-full py-4 rounded-xl flex items-center justify-center gap-2 font-bold transition-all active:scale-[0.98]",
+                      "group relative w-full py-5 rounded-xl flex items-center justify-center gap-3 font-black uppercase tracking-[0.2em] transition-all overflow-hidden",
                       submitted 
-                        ? "bg-emerald-500 text-white" 
-                        : "bg-neon-green text-[#020617] hover:opacity-90"
+                        ? "bg-emerald-500 text-white shadow-[0_0_20px_rgba(16,185,129,0.4)]" 
+                        : "bg-neon-green text-[#020617] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]"
                     )}
                   >
-                    {submitted ? (
-                      <>
-                        Processing Redirects... <CheckCircle2 className="w-5 h-5" />
-                      </>
-                    ) : (
-                      <>
-                        Send Message <Send className="w-5 h-5" />
-                      </>
-                    )}
-                  </button>
+                    {/* Scanning Line Animation */}
+                    <div className="absolute inset-0 w-full h-[2px] bg-white/30 -translate-y-full group-hover:animate-[scan_2s_linear_infinite] z-20 pointer-events-none" />
+                    
+                    {/* Glow Layer */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+
+                    <span className="relative z-10 flex items-center gap-3">
+                      {submitted ? (
+                        <>
+                          Initialization Complete <CheckCircle2 className="w-5 h-5 animate-bounce" />
+                        </>
+                      ) : (
+                        <>
+                          Initialize Access <Send className="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                        </>
+                      )}
+                    </span>
+                  </motion.button>
                 </form>
               </div>
             </div>

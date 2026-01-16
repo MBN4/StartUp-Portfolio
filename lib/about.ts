@@ -6,7 +6,7 @@ export const aboutHeader = {
 export const aboutCards = [
   {
     title: "Our Mission",
-    description: "To empower businesses with high-end digital products that combine seamless functionality with breathtaking design.",
+    description: "To Empower businesses with high-end digital products that combine seamless functionality with breathtaking design.",
     iconName: "Target"
   },
   {
